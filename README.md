@@ -16,7 +16,7 @@ What things you need to install the software and how to install them
 
 OS: Centos6 or higher
 
-Commands: find, awk, sort, du, python
+Commands: find, awk, sort, du, python, git
 
 ```
 sudo yum install -y find awk sort du 
