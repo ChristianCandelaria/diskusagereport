@@ -39,22 +39,22 @@ cd diskusagereport
 Make scirpt executable
 ```
 ## bash script
-sudo chmod u+x diskreport.sh
+sudo chmod u+x usagereport.sh
 ## python script
-sudo chmod u+x diskreport.py
+sudo chmod u+x usagereport.py
 ```
 
 ## Running the tests
 
-sudo ./diskreport.sh
+sudo ./usagereport.sh
 
-sudo ./diskreport.py
+sudo ./usagereport.py
 
-sudo python diskreport.py
+sudo python usagereport.py
 
 ## Versioning
 
-V0.3
+V0.4
 
 ## Authors
 
