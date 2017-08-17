@@ -58,18 +58,18 @@ echo $'\n'
 echo "################################"
 echo "#### Files without a user   ####"
 echo "################################"
-find $DIR -type f -nouser -printf '%s %p\n'
+find $DIR -type f -nouser -printf '%s %p\n' | head
 
 echo $'\n'
 echo "################################"
 echo "#### Empty files            ####"
 echo "################################"
-find $DIR -type f -empty -printf '%s %p\n'
+find $DIR -type f -empty -printf '%s %p\n' | head
 
 echo $'\n'
 echo "################################"
 echo "#### Files world readable   ####"
 echo "################################"
-find / -type f -perm =o+r 
+find / -type f -perm =o+r  head
 
 echo $'\n'
