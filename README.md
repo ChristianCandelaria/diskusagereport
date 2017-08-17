@@ -1,5 +1,8 @@
 # Diskusagereport
-Top 10 disk file/directories/users/fast growing files
+A script for finding the top 10 disk file/directories/users/fast growing files
+A script for finding Files without a users
+A script for finding Empty files
+A script to Report which files are world readable
 
 ## Getting Started
 These instructions is for testing purposes.
