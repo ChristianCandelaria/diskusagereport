@@ -37,14 +37,15 @@ sudo chmod u+x diskreport.py
 
 ## Running the tests
 
-
 sudo ./diskreport.sh
+
 sudo ./diskreport.py
+
 sudo python diskreport.py
 
 ## Versioning
 
-V0.1
+V0.2
 
 ## Authors
 
