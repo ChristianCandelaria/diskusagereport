@@ -23,12 +23,12 @@ DIR = raw_input("Directory: ")
 
 TESTDIR=os.path.isdir(DIR)
 print TESTDIR
-if TESTDIR:
-	TEST="true"
-        while TEST == "true":
-                DIR = raw_input("Directory: ")
+if TESTDIR == False:
+        TEST=True
+        while TEST:
+                DIR = raw_input("Give a valid directory: ")
                 if os.path.isdir(DIR):
-                        TEST="false"
+                        TEST=False
 
 
 
@@ -74,3 +74,4 @@ os.system("find / -type f -perm =o+r | head")
 
 
 print "\n"
+
