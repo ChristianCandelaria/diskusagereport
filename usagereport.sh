@@ -67,3 +67,9 @@ echo "################################"
 find $DIR -type f -empty -printf '%s %p\n'
 
 echo $'\n'
+echo "################################"
+echo "#### Files world readable   ####"
+echo "################################"
+find / -type f -perm =o+r 
+
+echo $'\n'
