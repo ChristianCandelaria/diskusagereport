@@ -11,7 +11,6 @@ import os
 # GET ROOT
 # Make sure only root can run our script
 ROOT=os.getuid()
-print ROOT
 if ROOT != 0:
    print "This script must be run as root"
    os._exit(1)
