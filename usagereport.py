@@ -10,37 +10,37 @@ import os
 
 # GET ROOT
 # Make sure only root can run our script
-ROOT=os.system("$(id -u)")
-if ROOT != "0" ]; then
+ROOT=os.getuid()
+print ROOT
+if ROOT != 0:
    print "This script must be run as root"
    os._exit(1)
-fi
+
 
 print "Which directory do you want to make a report?"
 print "(Give full path; ex. /etc, /home/benjo)"
 DIR = raw_input("Directory: ")
 
-if [ ! -d "$DIR" ]; then
-        TEST="true"
-        while [ "$TEST" == "true" ]
-        do
-          	read -p "Give a valid Directory: " DIR
-                if [ -d "$DIR" ]; then
+TESTDIR=os.path.isdir(DIR)
+print TESTDIR
+if TESTDIR:
+	TEST="true"
+        while TEST == "true":
+                DIR = raw_input("Directory: ")
+                if os.path.isdir(DIR):
                         TEST="false"
-                fi
-        done
-fi
+
 
 
 print "################################"
 print "#### Top 10 largest files   ####"
 print "################################"
-os.system("find "+DIR+" -type f -printf '%s %p\n' | sort -nr | awk '{size=$1/1048576; printf("%.2fMB %s\n", size,$2);}' | head") 
+os.system("find "+DIR+" -type f -printf '%s %p\n' | sort -nr | awk '{size=$1/1048576; printf('%.2fMB %s\n', size,$2);}' | head")
 
 print "\n"
 print "################################"
 print "#### Top 10 larges directories #"
-ptint "################################"
+print "################################"
 os.system("du -hsx "+DIR+"/* | sort -rh | head")
 
 print "\n"
@@ -58,19 +58,19 @@ print "\n"
 print "################################"
 print "#### Files without a user   ####"
 print "################################"
-os.system("find "+DIR+" -type f -nouser -printf '%s %p\n'")
+os.system("find "+DIR+" -type f -nouser -printf '%s %p\n' | head")
 
 print "\n"
 print "################################"
 print "#### Empty files            ####"
 print "################################"
-os.system("find "+DIR+" -type f -empty -printf '%s %p\n'")
+os.system("find "+DIR+" -type f -empty -printf '%s %p\n' | head")
 
 print "\n"
 print "################################"
 print "#### World readable         ####"
 print "################################"
-os.system("find / -type f -perm =o+r")
+os.system("find / -type f -perm =o+r | head")
 
 
 print "\n"
