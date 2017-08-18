@@ -69,7 +69,7 @@ print "\n"
 print "################################"
 print "#### World readable         ####"
 print "################################"
-os.system("find / -type f -perm =o+r | head")
+os.system("find "+DIR+" -type f -perm =o+r | head")
 
 
 print "\n"
