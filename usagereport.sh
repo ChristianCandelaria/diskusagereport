@@ -70,6 +70,6 @@ echo $'\n'
 echo "################################"
 echo "#### Files world readable   ####"
 echo "################################"
-find / -type f -perm =o+r  head
+find $DIR -type f -perm =o+r  head
 
 echo $'\n'
